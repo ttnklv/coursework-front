@@ -1,0 +1,53 @@
+body{
+    font-family: Calibri;
+}
+.article_list {
+    border: 2px solid #555;
+    border-radius: 5px;
+    width: 380px;
+    float: left;
+    text-align: center;
+    margin: 15px;
+    padding: 20px;
+    position: relative;
+}
+
+.name_analyst{
+    font-size: 25px;
+}
+
+#name_art{
+    font-size: 40px;
+    font-weight: bold;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.xpandable-block {
+    height: 250px;
+    overflow: hidden;
+    order: 0;
+}
+
+.xpand-button {
+    order: 1;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .xpandable-block {
+    height: auto;
+}
+
+label {
+    order: 1;
+    text-decoration: underline;
+    font-size: 18px;
+    cursor: pointer;
+}

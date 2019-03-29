@@ -1,0 +1,139 @@
+body {
+    font-family: Calibri;
+}
+
+.nameMini {
+    float: left;
+    margin: 0 1.5%;
+    width: 41%;
+    font-size: 40pt;
+}
+
+.rankMini {
+    float: right;
+    font-size: 12pt;
+    width: 150pt;
+    text-align: center;
+    margin-right: 550pt;
+}
+
+.imgMini {
+    height: 120px;
+}
+
+.numberMini {
+    font-size: 20pt;
+    font-weight: bolder;
+}
+
+.mainInfoMini {
+    position: relative;
+    width: 600px;
+    margin-left: 210px;
+    margin-top: -90px;
+    height: 155px;
+    overflow: hidden;
+    order: 0;
+}
+
+#mainInfoTitleMini {
+    text-align: right;
+    font-weight: bold;
+    width: 100px;
+    margin-top: 70px;
+    margin-left: 70px;
+}
+
+.yourScoreMini {
+    text-align: center;
+    float: left;
+    width: 100px;
+}
+
+.scoreAndArticle_mini {
+    border-bottom: 190px solid white;
+}
+
+#date {
+    margin-left: 700px;
+    margin-top: -178px;
+    width: 50px;
+    height: 40px;
+}
+
+.article_mini {
+    text-align: center;
+    float: left;
+    width: 250px;
+    margin-right: 60px;
+}
+
+
+.imgDes_mini {
+    height: 110px;
+    float: left;
+    margin: 4px 10px 2px 0;
+}
+
+#mainPicMini {
+    border-radius: 5px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    height: 170px;
+    float: left;
+    clear: both;
+}
+
+.articles {
+    clear: both;
+}
+
+.imgMini {
+    margin-top: -165px;
+    margin-left: 100px;
+}
+
+.circleMini {
+    text-align: center;
+    border: 5px solid black;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 100%;
+    margin: 20px 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.xpandable-block {
+    height: 55px;
+    overflow: hidden;
+    order: 0;
+}
+
+.xpand-button {
+    order: 1;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .xpandable-block {
+    height: auto;
+}
+
+label {
+    order: 1;
+    text-decoration: underline;
+    font-size: 18px;
+    cursor: pointer;
+}
+
