@@ -12,7 +12,8 @@ body{
     position: relative;
 }
 
-.name_analyst{
+.answer{
+    display:inline-block;
     font-size: 25px;
 }
 
@@ -75,4 +76,11 @@ button{
     overflow: hidden;
     width: 90px;
     margin-right: 35px;
+}
+
+.checkVoteImg{
+    width: 70px;
+    height: 70px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }

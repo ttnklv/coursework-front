@@ -31,6 +31,7 @@ class VoteTest extends React.Component {
         })
             .then(res => {
                 if (res.status !== 401) {
+                    console.log(res.data);
                     this.setState({votes: res.data});
                 }
             }).catch(err => {
@@ -48,7 +49,7 @@ class VoteTest extends React.Component {
         })
             .then(res => {
                 if (res.status === 200) {
-                    
+                    this.getVotes();
                 }
             }).catch(err => {
             console.log(err);
@@ -62,13 +63,32 @@ class VoteTest extends React.Component {
                 {this.state.votes.map(
                     article => {
                         return (
-                            <div>       
+                            <div>
                                 <div className="article_list">
                                     <img className="img" id="mainVoteImg" src={article.img} alt="иллюстрация"/><br/>
                                     {article.name}<br/>
-                                    <button><img className="img voteImg" src={tick} alt="иллюстрация"/></button>
-                                    <button><img className="img voteImg" src={question} alt="иллюстрация"/></button>
-                                    <button><img className="img voteImg" src={dagger} alt="иллюстрация"/></button>
+
+                                    {article.custom_voice ? null
+                                        : <button onClick={() => this.ballot(article.id_vote, "1")}>
+                                            <img className="img voteImg" src={tick} alt="иллюстрация"/>
+                                        </button>}
+                                    {article.custom_voice ? null
+                                        : <button>
+                                            <img className="img voteImg" src={question} alt="иллюстрация"/>
+                                        </button>}
+                                    {article.custom_voice ? null
+                                        : <button onClick={() => this.ballot(article.id_vote, "0")}>
+                                            <img className="img voteImg" src={dagger} alt="иллюстрация"/>
+                                        </button>}
+                                    {article.custom_voice ?
+                                        <div>
+                                            <img className="img checkVoteImg" src={tick} alt="иллюстрация"/>
+                                            <div className="answer">{article.positive}</div>
+                                            <img className="img checkVoteImg" src={dagger} alt="иллюстрация"/>
+                                            <div className="answer">{article.negative}</div>
+                                        </div>
+                                        : null }
+
                                 </div>
                             </div>
                         )
