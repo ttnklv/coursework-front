@@ -101,6 +101,7 @@ class Chat extends React.Component {
         }).then(res => {
             if (res.status !== 401) {
                 this.getMessagesFromServer();
+                this.setState({message: ""});
             }
         }).catch(err => {
             console.log(err);
