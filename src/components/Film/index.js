@@ -8,6 +8,8 @@ import votes from "./img/vote.png";
 import {setInfo} from "../../actions/setInfo";
 import './Film.css';
 import Chat from "../Chat"
+import Complaint from "../Complaint"
+import ComplaintAnswer from "../ComplaintAnswer";
 
 
 class Film extends React.Component {
@@ -208,6 +210,9 @@ class Film extends React.Component {
                             </Link>
                         </div>
                     </div>
+
+                    <Complaint history={this.history}/>
+                    <ComplaintAnswer history={this.history}/>
                 </div>
 
             );
