@@ -18,7 +18,6 @@ class MiniFilm extends React.Component {
         this.filmReview = this.filmReview.bind(this);
         this.filmReview();
 
-        //this.changeFilmId = this.changeFilmId.bind(this);
 
         this.state = {
             idFilm: 1,

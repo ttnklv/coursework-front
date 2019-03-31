@@ -6,6 +6,7 @@ import Chat from "./components/Chat";
 import Articles from "./components/Articles";
 import MiniFilm from "./components/MiniFilm";
 import VoteTest from "./components/VoteTest";
+import ComplaintSupport from "./components/ComplaintSupport";
 import './App.css';
 
 
@@ -26,7 +27,8 @@ const App = () => (
             <Route exact path='/chat' component={Chat}/>
             <Route exact path='/articles' component={Articles}/>
             <Route exact path='/votes' component={VoteTest}/>
-            <Route pattern='/miniFilm' component={MiniFilm}/>
+            {/*<Route pattern='/miniFilm' component={MiniFilm}/>*/}
+            <Route pattern='/complaintSupport' component={ComplaintSupport}/>
         </Switch>
     </div>
 

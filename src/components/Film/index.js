@@ -19,9 +19,6 @@ class Film extends React.Component {
         this.startMethod = this.startMethod.bind(this);
         this.startMethod();
 
-        this.checkLocation = this.checkLocation.bind(this);
-        // this.checkLocation();
-
         this.state = {
             test: [],
             review: [],
@@ -32,8 +29,6 @@ class Film extends React.Component {
         this.filmInformation();
 
         this.filmReview = this.filmReview.bind(this);
-
-        this.changeLocation = this.changeLocation.bind(this);
     }
 
     startMethod() {
@@ -104,35 +99,6 @@ class Film extends React.Component {
             });
     }
 
-    checkLocation() {
-        if (this.props.info == null || this.props.info === undefined) {
-            let params = new URLSearchParams();
-            params.append('id_user', "1");
-            axios.get('http://localhost:8090/getState', {params})
-                .then(res => {
-                    if (res.status !== 401) {
-                        console.log(res.data.id_film);
-                        this.props.setInfo(res.data.id_film);
-                        this.filmInformation();
-                        this.filmReview();
-                    }
-                }).catch(err => {
-                console.log(err);
-            });
-        } else {
-            this.filmInformation();
-            this.filmReview();
-        }
-    }
-
-    changeLocation() {
-        let params = new URLSearchParams();
-        params.append('id_user', "1");
-        params.append('id_film', this.props.info);
-        axios.get('http://localhost:8090/setState', {params});
-    }
-
-
     render() {
         if (this.state.info) {
             return (
@@ -199,13 +165,13 @@ class Film extends React.Component {
                         </div>
                         <div className="vote link">
                             Перейти к голосованием<br/>
-                            <Link to="/votes" onClick={this.changeLocation}>
+                            <Link to="/votes">
                                 <img className="imgDes" src={votes} alt="иллюстрация"/>
                             </Link>
                         </div>
                         <div className="anotherArticle link">
                             Развернуть все статьи аналитиков<br/>
-                            <Link to="/articles" onClick={this.changeLocation}>
+                            <Link to="/articles">
                                 <img className="imgDes" src={article} alt="иллюстрация"/>
                             </Link>
                         </div>
@@ -213,6 +179,8 @@ class Film extends React.Component {
 
                     <Complaint history={this.history}/>
                     <ComplaintAnswer history={this.history}/>
+
+                    <Link to="/complaintSupport">Перейти к приколам тех. поддержки</Link>
                 </div>
 
             );
